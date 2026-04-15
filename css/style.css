@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --regal-navy: #0F3375;
+    --cobalt-blue: #13459C;
+    --laser-blue: #1557C0;
+    --sapphire-sky: #196BDE;
+    --azure-blue: #2382F7;
+    --dodger-blue: #4B9CF9;
+    --baby-blue-ice-1: #77B6FB;
+    --baby-blue-ice-2: #A4CEFC;
+    --pale-sky: #CCE4FD;
+    --alice-blue: #E8F3FE;}
+* {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+body {
+    background-color: var(--alice-blue);
+    scroll-behavior: smooth;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+header img {
+    width: 200px;
+    margin-top: 15px;
+}
+
+.header-nav {
+    background-color: var(--regal-navy);
+    color: white;
+    width: 100%;
+    padding: 10px;
+    border-radius: 0px 0px 8px 8px;
+}
+
+.header-nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav li {
+    list-style: none;
+}
+
+.header-nav li a {
+    color: white;
+    text-decoration: none;
+}
+
+.burger {
+    display: none;
+}
+
+footer {
+    background-color: var(--regal-navy);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.footer-content a {
+    color: white;
+}
+
+.footer-content h2 {
+    color: var(--baby-blue-ice-2);
+    font-size: medium;
+}
+
+.footer-links {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.footer-links a {
+    color: white;
+    margin-top: 20px;
+}
+
+.footer-links::before {
+    content: " ";
+    width: 90%;
+    height: 1px;
+    position: absolute; 
+    background: var(--baby-blue-ice-2); 
+    border-radius: 3px;
+    transition: all .5s ease-in-out;
+}
