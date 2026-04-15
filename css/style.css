@@ -1,88 +1,119 @@
-#pedagogic {
-    font-family: calibri;
-    margin:0;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --regal-navy: #0F3375;
+    --cobalt-blue: #13459C;
+    --laser-blue: #1557C0;
+    --sapphire-sky: #196BDE;
+    --azure-blue: #2382F7;
+    --dodger-blue: #4B9CF9;
+    --baby-blue-ice-1: #77B6FB;
+    --baby-blue-ice-2: #A4CEFC;
+    --pale-sky: #CCE4FD;
+    --alice-blue: #E8F3FE;}
+* {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+body {
+    background-color: var(--alice-blue);
+    scroll-behavior: smooth;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+header img {
+    width: 200px;
+    margin-top: 15px;
+}
+
+.header-nav {
+    background-color: var(--regal-navy);
+    color: white;
+    width: 100%;
+    padding: 10px;
+    border-radius: 0px 0px 8px 8px;
+}
+
+.header-nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
 }
 
-#pedagogic .card-container {
-    perspective: 1000px;
-    padding-left: 10px;
-    padding-right: 10px;
+.header-nav li {
+    list-style: none;
 }
 
-#pedagogic .card{
-    position: relative;
-    width: 100px;
-    height: 150px;
-    transform-style: preserve-3d;
-    transition: transform 1.0s;
+.header-nav li a {
+    color: white;
+    text-decoration: none;
 }
 
-#pedagogic .front, .back {
-    position: absolute;
+.burger {
+    display: none;
+}
+
+footer {
+    background-color: var(--regal-navy);
     width: 100%;
-    height: 100%;
-    border-radius: 8px;
-    backface-visibility: hidden;
-
-}
-
-#pedagogic .front {
-    background-color: blue;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    color: black;
-    transform: rotateY(0deg);
+    color: white;
+    border-radius: 8px 8px 0px 0px;
 }
 
-#pedagogic .back {
-    background-color: red;
+.footer-content {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    color: black;
-    transform: rotateY(180deg);
-}
-
-#pedagogic .card-container.is-flipped .card {
-    transform: rotateY(180deg);
-}
-
-#pedagogic .banner {
+    flex-direction: row;
+    justify-content: space-evenly;
     width: 100%;
-    height: 100vh;
-    text-align: center;
-    overflow: hidden;
-    position: relative;
 }
 
-#pedagogic .banner .slider {
-    position: absolute;
-    width: 100px;
-    height: 150px;
-    top: 10%;
-    left: calc(50% - 100px);
-    transform-style: preserve-3d;
-    transform: perspective(1000px) rotateY(0deg); 
-    transition: transform 0.7s ease-out;
+.footer-content a {
+    color: white;
 }
 
-#pedagogic .banner .slider .item {
-    position: absolute;
-    inset: 0 0 0 0;
-    transform: 
-        rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
-        translateZ(200px);
-
+.footer-content h2 {
+    color: var(--baby-blue-ice-2);
+    font-size: medium;
 }
 
-#pedagogic .banner .slider .item img{
+.footer-links {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.footer-links a {
+    color: white;
+    margin-top: 20px;
+}
+
+.footer-links::before {
+    content: " ";
+    width: 90%;
+    height: 1px;
+    position: absolute; 
+    background: var(--baby-blue-ice-2); 
+    border-radius: 3px;
+    transition: all .5s ease-in-out;
 }
