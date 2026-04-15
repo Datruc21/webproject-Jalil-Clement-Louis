@@ -1,0 +1,171 @@
+{
+  "sessions": [
+    {
+      "id": 1,
+      "title": "Maths",
+      "day": "Monday",
+      "date": "2026-04-13",
+      "week": 1,
+      "start": "08:00",
+      "end": "10:00",
+      "location": "Room A101",
+      "teacher": "Nicolas Flasque"
+    },
+    {
+      "id": 2,
+      "title": "Web Development",
+      "day": "Tuesday",
+      "date": "2026-04-14",
+      "week": 1,
+      "start": "10:00",
+      "end": "12:00",
+      "location": "Lab B205",
+      "teacher": "Marwa Harzi"
+    },
+    {
+      "id": 3,
+      "title": "English",
+      "day": "Wednesday",
+      "date": "2026-04-15",
+      "week": 1,
+      "start": "09:00",
+      "end": "11:00",
+      "location": "Room C303",
+      "teacher": "Asma Gabis"
+    },
+    {
+      "id": 4,
+      "title": "Algorithms",
+      "day": "Thursday",
+      "date": "2026-04-16",
+      "week": 1,
+      "start": "13:00",
+      "end": "15:00",
+      "location": "Room A202",
+      "teacher": "Khodor Hammoud"
+    },
+    {
+      "id": 5,
+      "title": "Cybersecurity",
+      "day": "Friday",
+      "date": "2026-04-17",
+      "week": 1,
+      "start": "14:00",
+      "end": "16:00",
+      "location": "Lab S301",
+      "teacher": "Lazhar Hamel"
+    },
+
+    {
+      "id": 6,
+      "title": "Data Science",
+      "day": "Monday",
+      "date": "2026-04-20",
+      "week": 2,
+      "start": "10:00",
+      "end": "12:00",
+      "location": "Room D101",
+      "teacher": "Mohamad Ghassany"
+    },
+    {
+      "id": 7,
+      "title": "Software Engineering",
+      "day": "Tuesday",
+      "date": "2026-04-21",
+      "week": 2,
+      "start": "14:00",
+      "end": "16:00",
+      "location": "Room B110",
+      "teacher": "Ilyes Jenhani"
+    },
+    {
+      "id": 8,
+      "title": "Information Systems",
+      "day": "Wednesday",
+      "date": "2026-04-22",
+      "week": 2,
+      "start": "13:00",
+      "end": "15:00",
+      "location": "Room C210",
+      "teacher": "Jean-Charles Huet"
+    },
+    {
+      "id": 9,
+      "title": "IT for Finance",
+      "day": "Thursday",
+      "date": "2026-04-23",
+      "week": 2,
+      "start": "10:00",
+      "end": "12:00",
+      "location": "Room F101",
+      "teacher": "Johannes Gomolka"
+    },
+    {
+      "id": 10,
+      "title": "Intro to Programming",
+      "day": "Friday",
+      "date": "2026-04-24",
+      "week": 2,
+      "start": "08:00",
+      "end": "10:00",
+      "location": "Room A001",
+      "teacher": "Yvan Guifo Fodjo"
+    },
+
+    {
+      "id": 11,
+      "title": "Databases",
+      "day": "Monday",
+      "date": "2026-04-27",
+      "week": 3,
+      "start": "16:00",
+      "end": "18:00",
+      "location": "Room D202",
+      "teacher": "Mohamed Hamidi"
+    },
+    {
+      "id": 12,
+      "title": "Systems Basics",
+      "day": "Tuesday",
+      "date": "2026-04-28",
+      "week": 3,
+      "start": "16:00",
+      "end": "18:00",
+      "location": "Room B220",
+      "teacher": "Reza Hatami"
+    },
+    {
+      "id": 13,
+      "title": "Project Workshop",
+      "day": "Wednesday",
+      "date": "2026-04-29",
+      "week": 3,
+      "start": "16:00",
+      "end": "18:00",
+      "location": "Lab C400",
+      "teacher": "Christine Ivetich"
+    },
+    {
+      "id": 14,
+      "title": "AI Fundamentals",
+      "day": "Thursday",
+      "date": "2026-04-30",
+      "week": 3,
+      "start": "16:00",
+      "end": "18:00",
+      "location": "Lab AI01",
+      "teacher": "Rostom Kachouri"
+    },
+    {
+      "id": 15,
+      "title": "Networks",
+      "day": "Friday",
+      "date": "2026-05-01",
+      "week": 3,
+      "start": "16:00",
+      "end": "18:00",
+      "location": "Room N101",
+      "teacher": "Helen Kassel"
+    }
+  ]
+}
