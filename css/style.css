@@ -10,7 +10,9 @@
     --baby-blue-ice-1: #77B6FB;
     --baby-blue-ice-2: #A4CEFC;
     --pale-sky: #CCE4FD;
-    --alice-blue: #E8F3FE;}
+    --alice-blue: #E8F3FE;
+}
+
 * {
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
