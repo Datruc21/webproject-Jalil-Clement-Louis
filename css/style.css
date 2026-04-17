@@ -78,6 +78,131 @@ header img {
     display: none;
 }
 
+/* Soulignement animé */
+.underline > a {
+    position: relative;
+}
+
+.underline > a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background: var(--alice-blue);
+    transition: width .3s ease-in-out;
+}
+
+.underline:hover > a::after {
+    width: 100%;
+}
+
+/* Responsive for the navbar -> burger menu */
+@media screen and (max-width: 1100px) {
+    .header-nav {
+        padding: 0;
+    }
+
+    .header-nav ul {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        width: 0;
+        height: calc(100vh - 185px);
+        position: absolute;
+        top: 185px;
+        right: 0;
+        background: var(--regal-navy);
+        transform: translateX(110%);
+        padding-left: 40px;
+        transition: all .5s ease-in-out;
+    }
+
+    .show-nav .header-nav ul {
+        width: 100vw;
+        transform: translateX(0);
+    }
+
+    .navbar__link {
+        transform: translateX(101%);
+        transition: all .5s ease-in-out;
+    }
+
+    .show-nav .navbar__link {
+        transform: translateX(0);
+    }
+
+    .navbar__link > a {
+        display: block;
+        padding: 1rem;
+        font-size: 1.6rem;
+        transition: all .4s ease-in-out;
+    }
+
+    .navbar__link > a:hover {
+        padding-left: 2rem;
+        letter-spacing: 3px;
+    }
+
+    /* Burger visible */
+    .burger {
+        display: block;
+        position: absolute;
+        top: 135px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        z-index: 200;
+    }
+
+    .bar {
+        display: block;
+        width: 45px;
+        height: 4px;
+        border-radius: 3px;
+        background: var(--regal-navy);
+        transition: all .5s ease-in-out;
+        position: relative;
+    }
+
+    .bar::before,
+    .bar::after {
+        content: "";
+        width: 45px;
+        height: 4px;
+        position: absolute;
+        left: 0;
+        background: var(--regal-navy);
+        border-radius: 3px;
+        transition: all .5s ease-in-out;
+    }
+
+    .bar::before {
+        transform: translateY(-12px);
+    }
+
+    .bar::after {
+        transform: translateY(12px);
+    }
+
+    /* Animation croix */
+    .show-nav .bar {
+        background: transparent;
+    }
+
+    .show-nav .bar::before {
+        transform: rotate(45deg);
+    }
+
+    .show-nav .bar::after {
+        transform: rotate(-45deg);
+    }
+}
+
 footer {
     background-color: var(--regal-navy);
     width: 100%;
