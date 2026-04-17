@@ -24,7 +24,7 @@
 
 /* ---------------------------------------------------------------------------------------- */
 section {
-    margin-top: 185px; /* Add to all CSS files */
+    /* margin-top: 185px; */
     width: 90%;
     display: flex;
     flex-direction: row;

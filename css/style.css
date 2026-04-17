@@ -205,6 +205,10 @@ header img {
     }
 }
 
+.first-section {
+    margin-top: 185px;
+}
+
 footer {
     background-color: var(--regal-navy);
     width: 100%;
