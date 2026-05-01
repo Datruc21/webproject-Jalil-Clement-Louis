@@ -39,9 +39,24 @@ const timeToRow = {
     "22:00": 15
 };
 
+const today = new Date();
+
 const printOfficeHours = async () => {
-    try {
-        const today = new Date();
+    try {   
+
+        const table = document.querySelector("table");
+        const rows = table.querySelectorAll("tbody tr");
+        
+        rows.forEach(row => {
+            // On commence à i = 1 pour ne pas vider la colonne des heures (8:00, 9:00...)
+            for (let i = 1; i < row.cells.length; i++) {
+                const cell = row.cells[i];
+                cell.innerHTML = "";      // Vide le texte
+                cell.rowSpan = 1;         // Casse les fusions
+                cell.style.display = "";  // Réaffiche les cellules cachées
+            }
+        });
+
         const day = today.getDay();
 
         const diffToMonday = day === 0 ? -6 : 1 - day;
@@ -69,9 +84,6 @@ const printOfficeHours = async () => {
         // 2. SORT
         sessions = sortSessions(sessions);
 
-        const table = document.querySelector("table");
-        const rows = table.querySelectorAll("tbody tr");
-
         // 3. TRACK USED CELLS (IMPORTANT)
         const occupied = new Set();
 
@@ -96,17 +108,18 @@ const printOfficeHours = async () => {
             const cell = row.cells[col];
             if (!cell) return;
 
-            const duration = rowEnd - rowStart + 1;
+            const duration = rowEnd - rowStart;
             cell.rowSpan = duration;
 
             cell.innerHTML = `
                 <strong>${event.title}</strong><br>
                 ${event.start} - ${event.end}<br>
+                ${event.teacher}
                 ${event.location || ""}
             `;
 
             // mark cells as occupied (NO DELETE)
-            for (let i = rowStart; i <= rowEnd; i++) {
+            for (let i = rowStart; i < rowEnd; i++) {
                 occupied.add(`${i}-${col}`);
             }
         });
@@ -116,4 +129,27 @@ const printOfficeHours = async () => {
     }
 };
 
-document.addEventListener("DOMContentLoaded", printOfficeHours);
+
+function nextWeek() {
+    today.setDate(today.getDate() + 7);
+    printOfficeHours();
+}
+
+function prevWeek() {
+    today.setDate(today.getDate() - 7);
+    printOfficeHours();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    printOfficeHours();
+
+    document.getElementById("btn-prev").addEventListener("click", () => {
+        today.setDate(today.getDate() - 7);
+        printOfficeHours();
+    });
+
+    document.getElementById("btn-next").addEventListener("click", () => {
+        today.setDate(today.getDate() + 7);
+        printOfficeHours();
+    });
+});
