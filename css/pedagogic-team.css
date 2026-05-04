@@ -1,3 +1,29 @@
+/* --------------------------------- Add to all CSS files----------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --regal-navy: #0F3375;
+    --cobalt-blue: #13459C;
+    --laser-blue: #1557C0;
+    --sapphire-sky: #196BDE;
+    --azure-blue: #2382F7;
+    --dodger-blue: #4B9CF9;
+    --baby-blue-ice-1: #77B6FB;
+    --baby-blue-ice-2: #A4CEFC;
+    --pale-sky: #CCE4FD;
+    --alice-blue: #E8F3FE;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+/* ---------------------------------------------------------------------------------------- */
+
 #pedagogic {
     font-family: calibri;
     margin:0;
