@@ -1,0 +1,82 @@
+/* --------------------------------- Add to all CSS files----------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --regal-navy: #0F3375;
+    --cobalt-blue: #13459C;
+    --laser-blue: #1557C0;
+    --sapphire-sky: #196BDE;
+    --azure-blue: #2382F7;
+    --dodger-blue: #4B9CF9;
+    --baby-blue-ice-1: #77B6FB;
+    --baby-blue-ice-2: #A4CEFC;
+    --pale-sky: #CCE4FD;
+    --alice-blue: #E8F3FE;
+}
+
+h1 {
+    color : var(--sapphire-sky);
+}
+
+
+#btn-prev {
+    background-color: var(--baby-blue-ice-1);
+    color : var(--pale-sky);
+    border-width: 0cap;
+    border-radius: 2px;
+    width: 30px;
+    height : 30px;
+    font-size: large;
+
+}
+
+#btn-next {
+    background-color: var(--baby-blue-ice-1);
+    color : var(--pale-sky);
+    border-width: 0cap;
+    border-radius: 2px;
+    width: 30px;
+    height : 30px;
+    font-size: large;
+
+}
+
+#nav-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;   
+    gap: 100px;
+
+}
+
+.course {
+    background-color: var(--dodger-blue);
+    color : var(--alice-blue);
+    border-radius: 5px;
+    padding: 1%;
+}
+
+
+main {
+    background-color: white;
+    border-radius: 2%;
+    margin : 5%;
+}
+
+.planning {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.planning td {
+    border: 1px solid;
+    min-height: 60px;
+    height: 60px;
+    vertical-align: top;
+}
+
+
+.planning td.hour {
+    text-align: center;
+    line-height: 60px;
+}

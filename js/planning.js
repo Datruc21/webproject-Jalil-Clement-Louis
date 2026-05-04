@@ -39,26 +39,21 @@ const timeToRow = {
     "22:00": 15
 };
 
-const today = new Date();
+let today = new Date();
 
 const printOfficeHours = async () => {
-    try {   
-
-        const table = document.querySelector("table");
-        const rows = table.querySelectorAll("tbody tr");
-        
-        rows.forEach(row => {
-            // On commence à i = 1 pour ne pas vider la colonne des heures (8:00, 9:00...)
-            for (let i = 1; i < row.cells.length; i++) {
-                const cell = row.cells[i];
-                cell.innerHTML = "";      // Vide le texte
-                cell.rowSpan = 1;         // Casse les fusions
-                cell.style.display = "";  // Réaffiche les cellules cachées
-            }
-        });
+    try {
+        const p = document.getElementById("current");
+        p.textContent = today.toLocaleDateString('fr-FR', {
+            weekday: 'long',
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+            });
+        const tbody = document.querySelector("table tbody");
+        tbody.innerHTML = ""; // 🔥 reset complet
 
         const day = today.getDay();
-
         const diffToMonday = day === 0 ? -6 : 1 - day;
 
         const monday = new Date(today);
@@ -74,55 +69,68 @@ const printOfficeHours = async () => {
 
         const data = await response.json();
 
-        // 1. FILTER
         let sessions = data.sessions.filter(event => {
             const eventDate = new Date(event.date);
             eventDate.setHours(0, 0, 0, 0);
             return eventDate >= monday && eventDate <= saturday;
         });
 
-        // 2. SORT
         sessions = sortSessions(sessions);
 
-        // 3. TRACK USED CELLS (IMPORTANT)
         const occupied = new Set();
 
-        sessions.forEach(event => {
+        // 🔥 on recrée chaque ligne (8h → 22h)
+        for (let hour = 8; hour <= 22; hour++) {
 
-            const day = event.day.toLowerCase();
-            const col = dayToIndex[day];
-            if (col === undefined) return;
+            const row = document.createElement("tr");
 
-            const rowStart = timeToRow[event.start];
-            const rowEnd = timeToRow[event.end];
+            // colonne heure
+            const timeCell = document.createElement("td");
+            timeCell.textContent = `${hour}:00`;
+            row.appendChild(timeCell);
 
-            if (rowStart === undefined || rowEnd === undefined) return;
+            // colonnes jours
+            for (let col = 1; col <= 6; col++) {
 
-            const row = rows[rowStart - 1]; // IMPORTANT FIX
-            if (!row) return;
+                const key = `${hour}-${col}`;
+                if (occupied.has(key)) continue;
 
-            const key = `${rowStart}-${col}`;
-            if (occupied.has(key)) return;
-            occupied.add(key);
+                const cell = document.createElement("td");
 
-            const cell = row.cells[col];
-            if (!cell) return;
+                // trouver un event qui commence ici
+                const event = sessions.find(e => {
+                    return (
+                        dayToIndex[e.day.toLowerCase()] === col &&
+                        parseInt(e.start) === hour
+                    );
+                });
 
-            const duration = rowEnd - rowStart;
-            cell.rowSpan = duration;
+                if (event) {
+                    const start = parseInt(event.start);
+                    const end = parseInt(event.end);
+                    const duration = end - start;
 
-            cell.innerHTML = `
-                <strong>${event.title}</strong><br>
-                ${event.start} - ${event.end}<br>
-                ${event.teacher}
-                ${event.location || ""}
-            `;
+                    cell.rowSpan = duration;
+                    cell.classList.add("course");
 
-            // mark cells as occupied (NO DELETE)
-            for (let i = rowStart; i < rowEnd; i++) {
-                occupied.add(`${i}-${col}`);
+                    cell.innerHTML = `
+                        <strong>${event.title}</strong><br>
+                        ${event.start} - ${event.end}<br>
+                        ${event.teacher}<br>
+                        ${event.location || ""}
+                    `;
+
+                    // marquer comme occupé
+                    for (let h = start; h < end; h++) {
+                        occupied.add(`${h}-${col}`);
+                    }
+                }
+
+                row.appendChild(cell);
             }
-        });
+
+            tbody.appendChild(row);
+        }
 
     } catch (error) {
         console.log(error);
@@ -152,4 +160,9 @@ document.addEventListener("DOMContentLoaded", () => {
         today.setDate(today.getDate() + 7);
         printOfficeHours();
     });
-});
+
+    document.getElementById("today").addEventListener("click", () => {
+        today = new Date();
+        printOfficeHours(); 
+    });
+}); 
