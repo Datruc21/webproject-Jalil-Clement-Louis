@@ -30,6 +30,14 @@ h1 {
 
 }
 
+#today {
+    border-width: 1cap;
+    border-radius: 2px;
+    border-color: var(--cobalt-blue);
+    color : var(--dodger-blue);
+    
+}
+
 #btn-next {
     background-color: var(--baby-blue-ice-1);
     color : var(--pale-sky);
@@ -38,7 +46,6 @@ h1 {
     width: 30px;
     height : 30px;
     font-size: large;
-
 }
 
 #nav-button {
@@ -59,8 +66,8 @@ h1 {
 
 main {
     background-color: white;
-    border-radius: 2%;
-    margin : 5%;
+    border-radius: 20px;
+    margin : 0 5% 5% 5%;
 }
 
 .planning {
@@ -72,11 +79,11 @@ main {
     border: 1px solid;
     min-height: 60px;
     height: 60px;
-    vertical-align: top;
+    text-align: center;
 }
 
-
-.planning td.hour {
-    text-align: center;
-    line-height: 60px;
+#current {
+    color: var(--regal-navy);
+    font-size: 150%;
+    margin : 0;
 }
