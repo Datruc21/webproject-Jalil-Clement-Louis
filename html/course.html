@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html mang="en">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -38,32 +38,56 @@
     <section class="main-section">
         <div class="module">
             <h2 class="module-title">Database</h2>
-            <ul class="module-info">
-                <li>Coordinator : Léna Trébaul</li>
-                <li>CM : 12h</li>
-                <li>TD : 15h</li>
-                <li>TP : 9h</li>
-            </ul>
+            <div class="module-info">
+                <p class="module-desc">Learn the fundamentals of relational database management systems, SQL queries, and data modeling to effectively store and retrieve information.</p>
+                <ul>
+                    <li>Coordinator : Léna Trébaul</li>
+                    <li>CM : 12h</li>
+                    <li>TD : 15h</li>
+                    <li>TP : 9h</li>
+                </ul>
+                <button class="quiz-btn" data-module="db">Test my knowledge</button>
+            </div>
         </div>
         <div class="module">
             <h2 class="module-title">Data Structure and Programming</h2>
-            <ul class="module-info">
-                <li>Coordinator : Nicolas Flasque</li>
-                <li>CM : 10h</li>
-                <li>TD : 20h</li>
-                <li>TP : 9h</li>
-            </ul>
+            <div class="module-info">
+                <p class="module-desc">Discover fundamental data structures such as linked lists, stacks, and queues, implemented through the C programming language.</p>
+                <ul>
+                    <li>Coordinator : Nicolas Flasque</li>
+                    <li>CM : 10h</li>
+                    <li>TD : 20h</li>
+                    <li>TP : 9h</li>
+                </ul>
+                <button class="quiz-btn" data-module="algo">Test my knowledge</button>
+            </div>
         </div>
         <div class="module">
             <h2 class="module-title">Java 1 : Fundamentals of OOP</h2>
-            <ul class="module-info">
-                <li>Coordinator : Cherifa Ben Khelil</li>
-                <li>CM : 12h</li>
-                <li>TD : 16h</li>
-                <li>TP : 6h</li>
-            </ul>
+            <div class="module-info">
+                <p class="module-desc">Master the core concepts of Object-Oriented Programming (OOP) including inheritance, polymorphism, and encapsulation using Java.</p>
+                <ul>
+                    <li>Coordinator : Cherifa Ben Khelil</li>
+                    <li>CM : 12h</li>
+                    <li>TD : 16h</li>
+                    <li>TP : 6h</li>
+                </ul>
+                <button class="quiz-btn" data-module="java">Test my knowledge</button>
+            </div>
         </div>
     </section>
+
+    <div id="quiz-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="quiz-title">Quiz Title</h2>
+            <div id="quiz-body">
+                <!-- space for questions -->
+            </div>
+            <button id="submit-quiz" class="quiz-btn submit-btn">Submit Answers</button>
+            <div id="quiz-result"></div>
+        </div>
+    </div>
 
     <footer class="footer">
         <div class="footer-content">
