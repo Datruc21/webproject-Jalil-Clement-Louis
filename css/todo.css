@@ -98,7 +98,7 @@ section {
 }
 
 .completed-todos .todo-item {
-    background-color: #74c674;
+    background-color: #d4edda;
     text-decoration: line-through;
 }
 
