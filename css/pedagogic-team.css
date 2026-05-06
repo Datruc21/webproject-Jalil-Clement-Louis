@@ -17,30 +17,59 @@
 * {
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
 }
 
 /* ---------------------------------------------------------------------------------------- */
 
 #pedagogic {
-    font-family: calibri;
-    margin:0;
-    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#pedagogic .banner {
+    width: 100%;
+    margin-top: 215px;
+    height: calc(100vh - 215px);
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    align-items: center; 
+    overflow: hidden;
+    position: relative;
+}
+
+#pedagogic .banner .slider {
+    position: relative;
+    width: 150px;
+    height: 200px;
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateY(0deg); 
+    cursor: grab;
+}
+
+#pedagogic .banner .slider:active {
+    cursor: grabbing;
+}
+
+#pedagogic .banner .slider .item {
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: 
+        rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+        translateZ(500px); 
 }
 
 #pedagogic .card-container {
     perspective: 1000px;
-    padding-left: 10px;
-    padding-right: 10px;
+    transition: transform 0.4s ease, opacity 0.4s ease; 
 }
 
-#pedagogic .card{
+#pedagogic .card {
     will-change: transform;
     position: relative;
     width: 150px;
@@ -50,70 +79,101 @@
     transition: transform 0.7s ease-in-out;
 }
 
-#pedagogic .front,#pedagogic .back {
+#pedagogic .front, #pedagogic .back {
     position: absolute;
     width: 100%;
     height: 100%;
     border-radius: 8px;
     backface-visibility: hidden;
-
-}
-
-#pedagogic .front {
-    background-color: rgb(86, 149, 230);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: black;
-    transform: rotateY(0deg);
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-#pedagogic .back {
-    background-color: rgb(117, 129, 181);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: black;
-    transform: rotateY(180deg);
-}
-
-#pedagogic .banner {
-    width: 100%;
-    height: 100vh;
-    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     overflow: hidden;
-    position: relative;
-    top:250px;
-    left: 20px;
 }
 
-#pedagogic .banner .slider {
-    position: absolute;
-    width: 150px;
-    height: 200px;
-    top: 10%;
-    left: calc(50% - 100px);
-    transform-style: preserve-3d;
-    transform: perspective(1000px) rotateY(0deg); 
-    cursor: grab;
-    transition: transform 0.7s ease-out;
-}
-
-#pedagogic .banner .slider .item {
-    position: absolute;
-    inset: 0 0 0 0;
-    transform: 
-        rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
-        translateZ(400px);
-
-}
-
-#pedagogic .banner .slider .item img{
+#pedagogic .front img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    pointer-events: none;
 }
 
-/* /!\ To do (for Clément) : layout of the backside of the card and fix the horizontal scroll */
+/* --------------------------- Arrière de la carte -------------------------- */
+#pedagogic .back {
+    background-color: var(--azure-blue);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+    transform: rotateY(180deg);
+    overflow-y: auto;
+    scrollbar-width: none; /* Cache la barre Firefox */
+}
+#pedagogic .back::-webkit-scrollbar {
+    display: none; /* Cache la barre Chrome/Safari */
+}
+
+#pedagogic .back h3 {
+    font-size: 14px;
+    margin: 5px 0;
+}
+#pedagogic .back h5 {
+    font-size: 10px;
+    margin: 0 0 8px 0;
+    font-style: italic;
+    font-weight: 300;
+}
+#pedagogic .back p {
+    font-size: 9px;
+    line-height: 1.3;
+    margin: 0;
+}
+
+/* -------------------- Responsive ---------------------- */
+@media screen and (max-width: 768px) {
+    #pedagogic .banner {
+        align-items: center; 
+    }
+    #pedagogic .banner .slider {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        width: 100vw;
+        height: auto;
+        padding: 20px calc(50vw - 125px); 
+        overflow-x: auto; 
+        scroll-snap-type: x mandatory; 
+        transform: none !important;
+    }
+    #pedagogic .banner .slider::-webkit-scrollbar {
+        display: none;
+    }
+    #pedagogic .banner .slider .item {
+        position: relative;
+        flex: 0 0 auto;
+        scroll-snap-align: center;
+        transform: none !important; /* remove the 3D circle */
+    }
+    #pedagogic .card-container {
+        opacity: 1 !important; 
+        transform: scale(1) !important;
+    }
+    
+    #pedagogic .card {
+        width: 250px; 
+        height: 350px;
+    }
+    #pedagogic .back h3 {
+        font-size: 22px;
+        margin: 15px 0 10px 0;
+    }
+    #pedagogic .back h5 {
+        font-size: 14px;
+        margin: 0 0 15px 0;
+    }
+    #pedagogic .back p {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+}
