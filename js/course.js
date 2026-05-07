@@ -106,7 +106,97 @@ document.addEventListener("DOMContentLoaded", () => {
                     answer: 2
                 }
             ]
+        },
+        "python": {
+    title: "Quiz: Python Fundamentals",
+    questions: [
+        {
+            q: "Which keyword is used to define a function in Python?",
+            options: ["function", "def", "func"],
+            answer: 1
+        },
+        {
+            q: "Which data type is immutable in Python?",
+            options: ["List", "Dictionary", "Tuple"],
+            answer: 2
+        },
+        {
+            q: "What is the correct file extension for Python files?",
+            options: [".pt", ".py", ".pyt"],
+            answer: 1
+        },
+        {
+            q: "Which symbol is used for comments in Python?",
+            options: ["//", "#", "/* */"],
+            answer: 1
+        },
+        {
+            q: "What is the output of: print(2 ** 3)?",
+            options: ["6", "8", "9"],
+            answer: 1
+            }
+        ]
+    },
+    "linux": {
+    title: "Quiz: Linux Fundamentals",
+    questions: [
+        {
+            q: "Which command is used to list files and directories in Linux?",
+            options: ["ls", "dir", "show"],
+            answer: 0
+        },
+        {
+            q: "Which symbol represents the root directory in Linux?",
+            options: ["#", "/", "*"],
+            answer: 1
+        },
+        {
+            q: "Which command is used to change the current directory?",
+            options: ["move", "cd", "pwd"],
+            answer: 1
+        },
+        {
+            q: "What does the command 'pwd' display?",
+            options: ["The current directory path", "The list of users", "The system password"],
+            answer: 0
+        },
+        {
+            q: "Which command is used to create a new directory?",
+            options: ["mkdir", "newdir", "createdir"],
+            answer: 0
         }
+    ]
+    },
+    "webdev": {
+    title: "Quiz: Web Development Fundamentals",
+    questions: [
+        {
+            q: "Which language is primarily used to structure web pages?",
+            options: ["CSS", "HTML", "JavaScript"],
+            answer: 1
+        },
+        {
+            q: "Which CSS property is used to change the text color?",
+            options: ["font-color", "text-color", "color"],
+            answer: 2
+        },
+        {
+            q: "Which JavaScript keyword is used to declare a variable?",
+            options: ["var", "int", "string"],
+            answer: 0
+        },
+        {
+            q: "What does CSS stand for?",
+            options: ["Creative Style Sheets", "Cascading Style Sheets", "Computer Style Syntax"],
+            answer: 1
+        },
+        {
+            q: "Which HTML tag is used to create a hyperlink?",
+            options: ["<a>", "<link>", "<href>"],
+            answer: 0
+        }
+    ]
+    }
     };
 
     // --- Modal window and quiz logic ---
