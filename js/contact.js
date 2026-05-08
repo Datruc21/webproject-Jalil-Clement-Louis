@@ -16,6 +16,7 @@ const submitContact = async (event) => {
             response.textContent = "Your message has been successfully sent"
         }
         else{
+            //Since no backend configured, will always write this
             response.textContent = "Error in connexion"
         }
 
