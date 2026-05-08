@@ -3,7 +3,8 @@ const submitContact = async (event) => {
     const url = "";//URL to modify
     const email = document.getElementById("email");
     const message = document.getElementById("message");
-    let response = document.createElement("p")
+    let response = document.createElement("p");
+    //Impossible to finish as we dont have a server, but the whole request is done frontend-wise
     if (email.value && validateEmail(email.value)) {
         const answer = await fetch(url, 
             {method:"POST",
