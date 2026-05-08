@@ -29,10 +29,28 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 h1 {
     color: var(--regal-navy);
+}
+
+.team {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 15px;
+}
+
+.member {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .team {
@@ -61,5 +79,9 @@ a {
     .team {
         flex-direction: column;
         align-items: center;
+    }
+
+    .member {
+        width: 80%;
     }
 }

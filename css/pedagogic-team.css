@@ -114,11 +114,11 @@ body {
     display: none; /* Cache la barre Chrome/Safari */
 }
 
-#pedagogic .back h3 {
+#pedagogic .back h2 {
     font-size: 14px;
     margin: 5px 0;
 }
-#pedagogic .back h5 {
+#pedagogic .back h3 {
     font-size: 10px;
     margin: 0 0 8px 0;
     font-style: italic;
@@ -164,11 +164,11 @@ body {
         width: 250px; 
         height: 350px;
     }
-    #pedagogic .back h3 {
+    #pedagogic .back h2 {
         font-size: 22px;
         margin: 15px 0 10px 0;
     }
-    #pedagogic .back h5 {
+    #pedagogic .back h3 {
         font-size: 14px;
         margin: 0 0 15px 0;
     }

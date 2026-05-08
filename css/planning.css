@@ -121,3 +121,82 @@ main.first-section {
     margin : 0;
     text-align: center;
 }
+
+/* -------------------------------- Responsive Design ------------------------------------- */
+
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    main.first-section {
+        margin-left: 2%;
+        margin-right: 2%;
+        padding: 15px 5px; 
+        width: 96%;
+    }
+
+    .planning {
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: collapse;
+    }
+
+    .planning td.hour {
+        width: 40px;
+        font-size: 10px;
+        padding: 2px;
+    }
+
+    .planning th, 
+    .planning td {
+        padding: 2px;
+        font-size: 9px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+
+    .planning th { font-size: 0; }
+    .planning th:nth-child(1) { font-size: 10px; width: 40px; }
+    .planning th:nth-child(2)::after { content: "Mon"; font-size: 11px; }
+    .planning th:nth-child(3)::after { content: "Tue"; font-size: 11px; }
+    .planning th:nth-child(4)::after { content: "Wed"; font-size: 11px; }
+    .planning th:nth-child(5)::after { content: "Thu"; font-size: 11px; }
+    .planning th:nth-child(6)::after { content: "Fri"; font-size: 11px; }
+    .planning th:nth-child(7)::after { content: "Sat"; font-size: 11px; }
+
+    .course {
+        padding: 2px;
+        line-height: 1.1;
+    }
+    
+    .course strong {
+        font-size: 10px;
+        display: block;
+        margin-bottom: 2px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    #nav-button {
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 15px 0;
+    }
+
+    #current {
+        width: 100%;
+        order: -1;
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+    }
+
+    #today, #btn-prev, #btn-next {
+        font-size: 14px;
+        padding: 5px 15px;
+    }
+}
